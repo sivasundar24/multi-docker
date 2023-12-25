@@ -12,4 +12,10 @@ after_install:
   - docker build -t sivasundar24/multi-client -f ./client
   - docker build -t sivasundar24/multi-server -f ./server
   - docker build -t sivasundar24/multi-nginx -f ./nginx
-  - docker build -t sivasundar24/multi-worker -f ./worker    
+  - docker build -t sivasundar24/multi-worker -f ./worker   
+
+  - echo docker login -u "$DOCKER_ID" 
+  - docker push sivasundar24/multi-client
+  - docker push sivasundar24/multi-server
+  - docker push sivasundar24/multi-nginx
+  - docker push sivasundar24/multi-worker
